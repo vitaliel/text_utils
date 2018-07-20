@@ -4,7 +4,7 @@ defmodule TextUtils do
   """
 
   def wrap(text, size \\ 80) do
-    blocks = String.split(text, ~r/\n{2,}/)
+    blocks = asciidoc_blocks(text)
 
     new_text =
       List.foldl(blocks, [], fn el, acc ->
@@ -54,6 +54,10 @@ defmodule TextUtils do
         new_text
       end
     end
+  end
+
+  def asciidoc_blocks(text) do
+    String.split(text, ~r/\n{2,}/)
   end
 
   #  @doc """

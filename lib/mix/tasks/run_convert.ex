@@ -3,11 +3,9 @@ defmodule Mix.Tasks.RunConvert do
 
   @shortdoc "Wrap lines in text file by 80 chars"
   def run(args) do
-    # IO.puts IO.inspect(args)
-    # [file | _] = args
-    file = "cap00.adoc"
-    {:ok, data} = File.read(file)
+    [input, output | _] = args
+    {:ok, data} = File.read(input)
     new_data = TextUtils.wrap(data)
-    IO.puts(new_data)
+    :ok = File.write(output, new_data)
   end
 end
