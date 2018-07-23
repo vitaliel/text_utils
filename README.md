@@ -1,6 +1,8 @@
 # TextUtils
 
-**TODO: Add description**
+```
+mix make_html book_ch01_en.adoc book_ch01_ro.adoc
+```
 
 ## Installation
 
